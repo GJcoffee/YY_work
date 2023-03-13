@@ -1,15 +1,8 @@
-import pypinyin
 import openpyxl
 import xlrd
 import os
 
-
-# 不带声调的(style=pypinyin.NORMAL)
-def pinyin(word):
-    s = ''
-    for i in pypinyin.pinyin(word, style=pypinyin.NORMAL):
-        s += ''.join(i)
-    return s
+from utils.common_utils import pinyin
 
 
 def read_efficiency(read_path, index_end):
@@ -48,6 +41,7 @@ def read_data(read_path, name_index, index_begin, index_end):
 
 
 def insert_data(insert_path, holiday_dict, efficiency_dict):
+    """"""
     null_list = []
     name_list = []
     name_dict = {}
